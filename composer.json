@@ -1,0 +1,20 @@
+{
+    "name": "genealabs/cashier-paypal",
+    "description": "Laravel Cashier-compatible billing for PayPal",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike Bronner",
+            "email": "hello@genealabs.com"
+        }
+    ],
+    "require": {
+        "paypal/rest-api-sdk-php": "^1.14"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
