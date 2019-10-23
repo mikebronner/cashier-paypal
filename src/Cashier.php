@@ -34,6 +34,25 @@ class Cashier
     protected static $formatCurrencyUsing;
 
     /**
+     * Indicates if Cashier migrations will be run.
+     *
+     * @var bool
+     */
+    public static $runsMigrations = true;
+
+    /**
+     * Configure Cashier to not register its migrations.
+     *
+     * @return static
+     */
+    public static function ignoreMigrations()
+    {
+        static::$runsMigrations = false;
+
+        return new static;
+    }
+
+    /**
      * Process scheduled OrderItems
      *
      * @return \Illuminate\Support\Collection
@@ -153,10 +172,10 @@ class Cashier
      */
     public static function getLocale(Model $owner)
     {
-        if(method_exists($owner, 'getLocale')) {
+        if (method_exists($owner, 'getLocale')) {
             $locale = $owner->getLocale();
 
-            if(!empty($locale)) {
+            if (!empty($locale)) {
                 return $locale;
             }
         }

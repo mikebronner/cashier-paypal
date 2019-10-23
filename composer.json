@@ -1,50 +1,39 @@
 {
-    "name": "laravel/cashier-mollie",
-    "description": "Laravel Cashier provides an expressive, fluent interface to Mollie's subscription billing services.",
+    "name": "genealabs/cashier-paypal",
+    "description": "Laravel Cashier provides an expressive, fluent interface to PayPal's billing services.",
     "keywords": [
-        "mollie",
+        "paypal",
         "laravel",
         "subscriptions",
         "recurring",
-        "billing",
-        "SEPA",
-        "Apple Pay",
-        "credit card",
-        "debit card",
-        "Europe"
+        "billing"
     ],
-    "homepage": "https://github.com/mollie/laravel-cashier",
+    "homepage": "https://github.com/GeneaLabs/cashier-paypal",
     "license": "MIT",
     "authors": [
         {
-            "name": "Mollie.com",
-            "email": "support@mollie.com",
-            "homepage": "https://www.mollie.com",
-            "role": "Owner"
-        },
-        {
-            "name": "Sander van Hooft",
-            "email": "info@sandervanhooft.com",
-            "homepage": "https://www.sandervanhooft.com",
+            "name": "Mike Bronner",
+            "email": "hello@genealabs.com",
+            "homepage": "https://genealabs.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=7.2",
-        "ext-json": "*",
-        "ext-intl": "*",
         "dompdf/dompdf": "^0.8.0",
-        "illuminate/database": "~5.8.0|^6.0",
-        "illuminate/support": "~5.8.0|^6.0",
-        "mollie/laravel-mollie": "^2.5",
-        "mollie/mollie-api-php": "v2.11.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/support": "^5.8|^6.0",
         "moneyphp/money": "^3.2",
-        "nesbot/carbon": "^1.33 || ^2.0"
+        "nesbot/carbon": "^1.33 || ^2.0",
+        "epartment/nova-dependency-container": "^1.2",
+        "paypal/rest-api-sdk-php": "^1.14",
+        "php": ">=7.2"
     },
     "require-dev": {
         "mockery/mockery": "^1.0",
-        "orchestra/testbench": "~3.0|~4.0",
-        "phpunit/phpunit": "^6.5|^7.5|^8.3",
+        "orchestra/testbench": "^4.2",
+        "phpmd/phpmd": "^2.7",
+        "phpunit/phpunit": "^8.3",
+        "squizlabs/php_codesniffer": "^3.5",
         "vlucas/phpdotenv": "^2.0|^3.3"
     },
     "autoload": {
@@ -52,18 +41,18 @@
             "src/Helpers/helpers.php"
         ],
         "psr-4": {
-            "Laravel\\Cashier\\": "src"
+            "GeneaLabs\\CashierPaypal\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Laravel\\Cashier\\Tests\\": "tests"
+            "GeneaLabs\\CashierPaypal\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Laravel\\Cashier\\CashierServiceProvider"
+                "GeneaLabs\\CashierPaypal\\ServiceProviders\\Cashier"
             ]
         }
     },

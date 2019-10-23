@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCreditsTable extends Migration
+class CreateCashierAppliedCouponsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateCreditsTable extends Migration
      */
     public function up()
     {
-        Schema::create('credits', function (Blueprint $table) {
+        Schema::create('applied_coupons', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('owner_type');
-            $table->unsignedBigInteger('owner_id');
-            $table->string('currency', 3);
-            $table->integer('value');
+            $table->unsignedBigInteger('redeemed_coupon_id');
+            $table->morphs('model');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateCreditsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('credits');
+        Schema::dropIfExists('applied_coupons');
     }
 }

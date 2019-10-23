@@ -39,5 +39,10 @@
         <env name="MANDATE_PAYMENT_PAID_ID" value=""/>
         <env name="PAYMENT_PAID_ID" value=""/>
         <env name="PAYMENT_FAILED_ID" value=""/>
+        <env name="PAYPAL_SANDBOX_ENABLED" value="true"/>
+        <env name="PAYPAL_SANDBOX_CLIENT_ID" value=""/>
+        <env name="PAYPAL_SANDBOX_CLIENT_SECRET" value=""/>
+        <env name="PAYPAL_CLIENT_ID" value=""/>
+        <env name="PAYPAL_CLIENT_SECRET" value=""/>
     </php>
 </phpunit>

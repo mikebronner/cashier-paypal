@@ -83,7 +83,7 @@ class Plan implements PlanContract
      *
      * @param string $name
      */
-    public function __construct(string $name)
+    public function __construct(string $name = null)
     {
         $this->name = $name;
         $this->orderItemPreprocessors = new OrderItemPreprocessorCollection;
